@@ -1,7 +1,7 @@
 # commands
 alias c="clear"
 alias e="exit"
-alias ls='ls --color=auto'
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias l='ls -l'
 alias lsr='ls -l --sort=date'
 
