@@ -16,13 +16,11 @@ sudo apt install stow
 git clone https://github.com/dongsin4869/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
-# Example: apply nvim and zsh configs
-stow nvim
-stow zsh
+# Example: apply nvim
+stow .config/nvim
 
 # Resulting symlinks (examples)
 ~/.config/nvim   -> ~/dotfiles/.config/nvim
-~/.zshrc         -> ~/dotfiles/.zshrc
 
 # Directory structure
 .
