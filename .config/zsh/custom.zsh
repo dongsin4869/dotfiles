@@ -26,14 +26,8 @@ setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks from each command line
 setopt HIST_IGNORE_SPACE      # Ignore commands that start with a space (for secret or experimental commands)
 setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicates first when trimming history
 
-# fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-export FZF_COMPLETION_TRIGGER='@'
-zle     -N             fzf-cd-widget
-bindkey -M emacs '^g' fzf-cd-widget
-bindkey -M vicmd '^g' fzf-cd-widget
-bindkey -M viins '^g' fzf-cd-widget
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
 
 # --- setup fzf theme ---
 fg="#CBE0F0"
@@ -93,6 +87,7 @@ fi
 
 # syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Disable underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
