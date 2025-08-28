@@ -5,8 +5,6 @@ It is managed using [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Requirements
 
-You need to install GNU Stow first:
-
 ```bash
 # macOS (Homebrew)
 brew install stow
@@ -40,4 +38,3 @@ stow zsh
 ├── .zshrc
 └── README.md
 ```
-
