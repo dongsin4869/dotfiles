@@ -21,18 +21,4 @@ stow .config/nvim
 
 # Resulting symlinks (examples)
 ~/.config/nvim   -> ~/dotfiles/.config/nvim
-
-# Directory structure
-.
-├── .config
-│   ├── gh
-│   ├── iterm2
-│   ├── nvim
-│   ├── tmux
-│   └── zsh
-├── .fzf.zsh
-├── .p10k.zsh
-├── .stow-local-ignore
-├── .zshrc
-└── README.md
 ```
