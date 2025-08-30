@@ -1,11 +1,4 @@
 {
-    "diagnostics.disable": [
-        "missing-fields",
-        "unused-local",
-        "undefined-field"
-    ],
-    "diagnostics.globals": [
-        "vim",
-        "readjust_font_size"
-    ]
+  "diagnostics.disable": ["missing-fields", "unused-local", "undefined-field"],
+  "diagnostics.globals": ["vim", "readjust_font_size"]
 }
