@@ -3,7 +3,7 @@
 This is my dotfiles repository including **zsh**, **neovim**, and **tmux**.  
 It is managed using [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Requirements
+## install and usage
 
 ```bash
 # macOS (Homebrew)
