@@ -31,4 +31,5 @@ require("lazy").setup({
 	require("plugins.debug"),
 	require("plugins.vim-tmux-navigator"),
 	require("plugins.harpoon"),
+	require("plugins.copilotchat"),
 })
