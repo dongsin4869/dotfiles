@@ -199,3 +199,7 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
     if.app-id = 'com.microsoft.VSCode'
     run = "move-node-to-workspace V"
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.Powerpoint'
+    run = "move-node-to-workspace P"
