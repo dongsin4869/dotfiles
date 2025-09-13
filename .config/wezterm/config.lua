@@ -11,6 +11,7 @@ config = {
 	window_close_confirmation = "NeverPrompt",
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
+	window_background_opacity = 0.7,
 	check_for_updates = false,
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = false,
