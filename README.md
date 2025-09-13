@@ -1,6 +1,6 @@
 # dotfiles
 
-This is my dotfiles repository including **zsh**, **neovim**, and **tmux**.  
+This is my dotfiles repository.  
 It is managed using [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## install and usage
