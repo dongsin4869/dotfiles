@@ -21,3 +21,6 @@ alias ga="git add"
 alias gp="git push"
 alias gl="git pull"
 alias lg="lazygit"
+
+# bash
+alias bash="/opt/homebrew/bin/bash"
