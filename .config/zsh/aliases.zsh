@@ -4,6 +4,7 @@ alias e="exit"
 alias ls="eza -x --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias l='ls -l'
 alias lsr='ls -l --sort=date'
+alias cd="z"
 
 # python
 alias python3="/opt/homebrew/Caskroom/miniconda/base/bin/python3"
