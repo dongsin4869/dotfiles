@@ -52,7 +52,7 @@ _fzf_comprun() {
   esac
 }
 
-# bat theme
+# theme
 export BAT_THEME=Nord
 
 # node version manager
