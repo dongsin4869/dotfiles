@@ -81,8 +81,8 @@ _fzf_comprun() {
   esac
 }
 
-# theme
-export BAT_THEME=Nord
+# bat theme
+export BAT_THEME=tokyonight_night
 
 # node version manager
 export NVM_DIR="$HOME/.nvm"
