@@ -99,5 +99,9 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# the fuck
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
 # zoxide
 eval "$(zoxide init zsh)"
