@@ -33,4 +33,5 @@ require("lazy").setup({
 	require("plugins.harpoon"),
 	require("plugins.copilotchat"),
 	require("plugins.dressing"),
+	require("plugins.surround"),
 })
