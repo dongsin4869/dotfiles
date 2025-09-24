@@ -35,6 +35,7 @@ return {
 				"tsx",
 				"css",
 				"html",
+				"diff",
 			},
 
 			-- Autoinstall languages that are not installed
