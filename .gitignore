@@ -1,2 +1,3 @@
 .config/nvim/lazy-lock.json
 .stow-local-ignore
+.config/sketchybar/cron_data.json

@@ -129,7 +129,7 @@ rd.on("line", function (line) {
 
     state.iAmCreator = data.value.value.creator?.self;
 
-    state.isInMyCalendar = data.value.value.calendarId?.includes("manish");
+    state.isInMyCalendar = data.value.value.calendarId?.includes("dongsin4869");
 
     state.iAmAttending = (state.iAmInAttendees || state.iAmCreator) && state.isInMyCalendar;
 
