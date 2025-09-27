@@ -24,7 +24,7 @@ require("lazy").setup({
   require("plugins.gitsigns"),
   require("plugins.alpha"),
   require("plugins.indent-blankline"),
-  require("plugins.misc"),
+  require("plugins.extra"),
   require("plugins.comment"),
   require("plugins.aerial"),
   require("plugins.lazygit"),
@@ -33,4 +33,6 @@ require("lazy").setup({
   require("plugins.copilotchat"),
   require("plugins.dressing"),
   require("plugins.surround"),
+  require("plugins.trouble"),
+  require("plugins.noice"),
 })

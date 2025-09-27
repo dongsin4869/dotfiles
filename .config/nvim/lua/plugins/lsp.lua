@@ -198,7 +198,7 @@ return {
       sqlls = {},
       terraformls = {},
       yamlls = {},
-      -- bashls = {},
+      bashls = {},
       dockerls = {},
       docker_compose_language_service = {},
       -- tailwindcss = {},
