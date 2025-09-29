@@ -69,7 +69,21 @@ sbar.add("item", {
 	click_script = "osascript -e 'tell application \"Spotify\" to next track'",
 })
 
+local function is_spotify_running()
+	local handle = io.popen("ps aux | grep -i '/Applications/Spotify.app/Contents/MacOS/Spotify' | grep -v grep")
+	if not handle then
+		return false
+	end
+	local result = handle:read("*a")
+	handle:close()
+	return result and result ~= ""
+end
+
 local function get_spotify_info(field)
+	if not is_spotify_running() then
+		return ""
+	end
+	
 	local script =
 		string.format("osascript -e 'tell application \"Spotify\" to %s of current track' 2>/dev/null", field)
 	local handle = io.popen(script)
@@ -88,24 +102,27 @@ local function update_media()
 	local artist = ""
 	local title = ""
 
-	-- Check Spotify
-	local handle = io.popen("osascript -e 'tell application \"Spotify\" to player state' 2>/dev/null")
-	if handle then
-		local state = handle:read("*a"):gsub("%s+", "")
-		handle:close()
+	-- Check if Spotify is running first
+	if is_spotify_running() then
+		-- Check Spotify state
+		local handle = io.popen("osascript -e 'tell application \"Spotify\" to player state' 2>/dev/null")
+		if handle then
+			local state = handle:read("*a"):gsub("%s+", "")
+			handle:close()
 
-		if state == "playing" then
-			playing = true
-			show_widget = true
-			artist = get_spotify_info("artist")
-			title = get_spotify_info("name")
-		elseif state == "paused" then
-			paused = true
-			show_widget = true
-			artist = get_spotify_info("artist")
-			title = get_spotify_info("name")
-			-- Add paused indicator
-			title = "⏸ " .. title
+			if state == "playing" then
+				playing = true
+				show_widget = true
+				artist = get_spotify_info("artist")
+				title = get_spotify_info("name")
+			elseif state == "paused" then
+				paused = true
+				show_widget = true
+				artist = get_spotify_info("artist")
+				title = get_spotify_info("name")
+				-- Add paused indicator
+				title = "⏸ " .. title
+			end
 		end
 	end
 
