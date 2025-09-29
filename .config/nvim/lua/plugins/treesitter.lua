@@ -29,6 +29,7 @@ return {
         "yaml",
         "make",
         "cmake",
+        "latex",
         "markdown",
         "markdown_inline",
         "bash",
