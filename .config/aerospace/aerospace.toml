@@ -182,6 +182,10 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+    if.app-id = 'net.cozic.joplin-desktop'
+    run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
     if.app-id = 'org.zotero.zotero'
     run = "move-node-to-workspace 3"
 
