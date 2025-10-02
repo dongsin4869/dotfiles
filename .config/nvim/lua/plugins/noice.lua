@@ -109,9 +109,4 @@ return {
     },
     keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
-
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    enabled = false,
-  },
 }

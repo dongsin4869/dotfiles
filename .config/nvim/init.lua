@@ -28,7 +28,6 @@ require("lazy").setup({
   require("plugins.comment"),
   require("plugins.aerial"),
   require("plugins.lazygit"),
-  require("plugins.debug"),
   require("plugins.vim-tmux-navigator"),
   require("plugins.copilotchat"),
   require("plugins.dressing"),
