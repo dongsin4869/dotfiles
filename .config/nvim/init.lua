@@ -27,7 +27,6 @@ require("lazy").setup({
   require("plugins.lsp"),
   require("plugins.lualine"),
   require("plugins.neotree"),
-  require("plugins.noice"),
   require("plugins.none-ls"),
   require("plugins.surround"),
   require("plugins.telescope"),

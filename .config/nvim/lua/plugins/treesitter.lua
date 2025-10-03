@@ -39,11 +39,6 @@ return {
         "css",
         "html",
         "diff",
-        "norg",
-        "scss",
-        "svelte",
-        "typst",
-        "vue",
       },
 
       -- Autoinstall languages that are not installed
