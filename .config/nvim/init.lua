@@ -20,7 +20,7 @@ require("lazy").setup({
   require("plugins.telescope"),
   require("plugins.lsp"),
   require("plugins.autocompletion"),
-  require("plugins.autoformatting"),
+  require("plugins.none-ls"),
   require("plugins.gitsigns"),
   require("plugins.alpha"),
   require("plugins.indent-blankline"),

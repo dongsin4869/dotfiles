@@ -12,6 +12,8 @@ return {
         "lua",
         "python",
         "fortran",
+        "c",
+        "cpp",
         "javascript",
         "typescript",
         "vimdoc",
