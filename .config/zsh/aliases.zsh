@@ -7,7 +7,7 @@ alias lsr='ls -l --sort=date'
 alias cd="z"
 
 # python
-alias python3="/opt/homebrew/Caskroom/miniconda/base/bin/python3"
+alias python3="/opt/homebrew/Caskroom/miniconda/base/envs/local/bin/python3"
 alias python=python3
 alias py=python3
 
