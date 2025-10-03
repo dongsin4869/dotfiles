@@ -26,6 +26,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# conda auto activate local
+conda activate local
+
 # custom zsh
 [ -f "$HOME/.config/zsh/custom.zsh" ] && source "$HOME/.config/zsh/custom.zsh"
 
