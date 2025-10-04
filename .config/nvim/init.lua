@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  require("plugins.aerial"),
-  require("plugins.alpha"),
   require("plugins.autocompletion"),
   require("plugins.bufferline"),
   require("plugins.colortheme"),
@@ -28,9 +26,9 @@ require("lazy").setup({
   require("plugins.lualine"),
   require("plugins.neotree"),
   require("plugins.none-ls"),
+  require("plugins.oil"),
   require("plugins.surround"),
   require("plugins.telescope"),
   require("plugins.treesitter"),
-  require("plugins.trouble"),
   require("plugins.vim-tmux-navigator"),
 })
