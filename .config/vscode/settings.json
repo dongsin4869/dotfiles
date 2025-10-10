@@ -402,7 +402,23 @@
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "workbench.startupEditor": "none",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/local",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "fileHistory": false,
+    "repositories": true,
+    "searchAndCompare": false,
+    "launchpad": true
+  },
+  "terminal.integrated.inheritEnv": false
 }
