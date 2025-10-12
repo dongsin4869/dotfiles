@@ -17,6 +17,10 @@ set -o vi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+# libomp
+export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+
 # history
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
