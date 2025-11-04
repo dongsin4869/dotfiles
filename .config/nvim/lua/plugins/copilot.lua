@@ -1,19 +1,8 @@
 return {
-  "zbirenbaum/copilot.lua",
-  event = "InsertEnter",
-  opts = {
-    suggestion = {
-      enabled = true,
-      auto_trigger = true,
-      debounce = 75,
-      keymap = {
-        accept = "<leader>p",
-        dismiss = "<Esc>",
-      },
-    },
-    panel = { enabled = false },
-    filetypes = {
-      ["*"] = true,
-    },
-  },
+  lazy = false,
+  "github/copilot.vim",
+  config = function()
+    vim.g.copilot_no_tab_map = true
+    vim.api.nvim_set_keymap("i", "<tab>", "copilot#Accept('<CR>')", { expr = true, silent = true })
+  end,
 }
