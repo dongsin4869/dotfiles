@@ -1,20 +1,26 @@
-lines.linewidth   : 2.0     # line width in points
-lines.linestyle   : -       # solid line
-lines.color       : C0      # has no affect on plot(); see axes.prop_cycle
+lines.linewidth: 2.0 # line width in points
+lines.linestyle: solid # solid line
+lines.color: C0 # has no affect on plot(); see axes.prop_cycle
 
-font.family         : sans-serif
-font.style          : normal
-font.variant        : normal
-font.weight         : medium
-font.stretch        : normal
-font.size           : 16.0
+font.family: serif
+font.serif: Times New Roman, DejaVu Serif
+font.style: normal
+font.variant: normal
+font.weight: medium
+font.stretch: normal
+font.size: 16.0
 
-legend.loc           : best
-legend.frameon       : True    # if True, draw the legend on a background patch
-legend.framealpha    : 0.8      # legend patch transparency
-legend.facecolor     : inherit  # inherit from axes.facecolor; or color spec
-legend.edgecolor     : 0.8      # background patch boundary color
+mathtext.fontset: custom
+mathtext.rm: Times New Roman
+mathtext.it: Times New Roman:italic
+mathtext.bf: Times New Roman:bold
 
-figure.figsize   : 6, 6
-figure.dpi       : 150      # figure dots per inch
-figure.constrained_layout.use : True
+legend.loc: best
+legend.frameon: True # if True, draw the legend on a background patch
+legend.framealpha: 0.8 # legend patch transparency
+legend.facecolor: inherit # inherit from axes.facecolor; or color spec
+legend.edgecolor: 0.8 # background patch boundary color
+
+figure.figsize: 6, 6
+figure.dpi: 200 # figure dots per inch
+figure.constrained_layout.use: True
