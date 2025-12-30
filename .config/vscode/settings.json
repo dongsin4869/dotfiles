@@ -15,6 +15,7 @@
   "workbench.statusBar.visible": true,
   "breadcrumbs.enabled": false,
   "editor.lineNumbers": "relative",
+  "notebook.lineNumbers": "on",
   "editor.minimap.enabled": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
