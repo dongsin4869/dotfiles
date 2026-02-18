@@ -13,6 +13,7 @@ return {
 	["Android Messages"] = ":android_messages:",
 	["Android Studio"] = ":android_studio:",
 	["Anki"] = ":anki:",
+	["Antigravity"] = ":antigravity:",
 	["Anytype"] = ":anytype:",
 	["App Eraser"] = ":app_eraser:",
 	["App Store"] = ":app_store:",
