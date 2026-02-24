@@ -123,10 +123,10 @@ automatically-unhide-macos-hidden-apps = false
     alt-n = 'workspace 3'
     alt-m = 'workspace 4'
     alt-s = 'workspace 5'
-    alt-v = 'workspace 6'
+    alt-c = 'workspace 6'
     alt-p = 'workspace 7'
     alt-w = 'workspace 8'
-    # alt-c = 'workspace 9'
+    alt-z = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-t = 'move-node-to-workspace 1'
@@ -137,7 +137,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-v = 'move-node-to-workspace 6'
     alt-shift-p = 'move-node-to-workspace 7'
     alt-shift-w = 'move-node-to-workspace 8'
-    # alt-shift-c = 'move-node-to-workspace 9'
+    alt-shift-z = 'move-node-to-workspace 9'
 
     alt-shift-f = 'fullscreen'
 
@@ -202,6 +202,10 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
+    if.app-id = 'com.google.antigravity'
+    run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
     if.app-id = 'com.microsoft.Powerpoint'
     run = "move-node-to-workspace 7"
 
@@ -209,6 +213,6 @@ automatically-unhide-macos-hidden-apps = false
     if.app-id = 'com.microsoft.Word'
     run = "move-node-to-workspace 8"
 
-# [[on-window-detected]]
-    # if.app-id = 'com.cron.electron'
-    # run = "move-node-to-workspace 9"
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos'
+    run = "move-node-to-workspace 9"
