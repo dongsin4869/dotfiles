@@ -20,7 +20,7 @@
       "model": "github-copilot/gpt-5-mini"
     },
     "multimodal-looker": {
-      "model": "google/gemini-3-flash"
+      "model": "github-copilot/gemini-3-flash-preview"
     },
     "prometheus": {
       "model": "github-copilot/claude-opus-4.5",
@@ -40,7 +40,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3-pro"
+      "model": "github-copilot/gemini-3-pro-preview"
     },
     "ultrabrain": {
       "model": "github-copilot/gpt-5.2-codex",
@@ -51,7 +51,7 @@
       "variant": "medium"
     },
     "artistry": {
-      "model": "google/gemini-3-pro",
+      "model": "github-copilot/gemini-3-pro-preview",
       "variant": "max"
     },
     "quick": {
@@ -64,7 +64,7 @@
       "model": "github-copilot/claude-sonnet-4.5"
     },
     "writing": {
-      "model": "google/gemini-3-flash"
+      "model": "github-copilot/gemini-3-flash-preview"
     }
   }
 }
