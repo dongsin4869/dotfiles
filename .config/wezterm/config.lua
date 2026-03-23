@@ -16,7 +16,7 @@ config = {
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = false,
 	font_size = 18,
-	font = wezterm.font("MesloLGS Nerd font Mono", { weight = "Bold" }),
+	font = wezterm.font("MesloLGS Nerd Font Mono", { weight = "Bold" }),
 	enable_tab_bar = false,
 	window_padding = {
 		left = 3,
