@@ -309,6 +309,7 @@ return {
 	["Zen Browser"] = ":zen_browser:",
 	["Zeplin"] = ":zeplin:",
 	["zoom.us"] = ":zoom:",
+	["Zoom"] = ":zoom:",
 	["Zotero"] = ":zotero:",
 	["Zulip"] = ":zulip:",
 }
