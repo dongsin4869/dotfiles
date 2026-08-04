@@ -16,7 +16,13 @@ config = {
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = false,
 	font_size = 18,
-	font = wezterm.font("MesloLGS Nerd Font Mono", { weight = "Bold" }),
+	-- MesloLGS NF is the powerlevel10k build (Nerd Fonts 2.3.3); the homebrew
+	-- cask font jumped to 3.5.0, which redrew 675 glyphs. Pin the icon look to
+	-- 2.3.3 and let the 3.5.0 symbols font fill in the ~96 icons it predates.
+	font = wezterm.font_with_fallback({
+		{ family = "MesloLGS NF", weight = "Bold" },
+		{ family = "Symbols Nerd Font Mono" },
+	}),
 	enable_tab_bar = false,
 	window_padding = {
 		left = 3,
