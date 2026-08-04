@@ -36,3 +36,6 @@ conda activate local
 [ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
 
 plugins=(git)
+
+# opencode
+export PATH=/Users/dongsin/.opencode/bin:$PATH
