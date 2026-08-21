@@ -206,6 +206,10 @@ automatically-unhide-macos-hidden-apps = false
     run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
+    if.app-id = 'com.anthropic.claudefordesktop'
+    run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
     if.app-id = 'com.microsoft.Powerpoint'
     run = "move-node-to-workspace 7"
 
