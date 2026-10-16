@@ -1,6 +1,12 @@
 local colors = require("colors")
 local settings = require("settings")
 local app_icons = require("helpers.app_icons")
+local app_images = require("helpers.app_images")
+
+local function image_path(name, focused)
+	local suffix = focused and "" or "_dim"
+	return os.getenv("HOME") .. "/.config/sketchybar/images/" .. name .. suffix .. ".png"
+end
 
 local query_workspaces =
 	"aerospace list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
@@ -8,11 +14,15 @@ local query_workspaces =
 -- Root is used to handle event subscriptions
 local root = sbar.add("item", { drawing = false })
 local workspaces = {}
+-- Per workspace, an item showing the icon image of each app in app_images
+local workspace_images = {}
 
 local function withWindows(f)
 	local open_windows = {}
+	local open_images = {}
 	-- Include the window ID in the query so we can track unique windows
-	local get_windows = "aerospace list-windows --monitor all --format '%{workspace}%{app-name}%{window-id}' --json"
+	local get_windows =
+		"aerospace list-windows --monitor all --format '%{workspace}%{app-name}%{app-bundle-id}%{window-id}' --json"
 	local query_visible_workspaces =
 		"aerospace list-workspaces --visible --monitor all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}' --json"
 	local get_focus_workspaces = "aerospace list-workspaces --focused"
@@ -23,10 +33,16 @@ local function withWindows(f)
 		for _, entry in ipairs(workspace_and_windows) do
 			local workspace_index = entry.workspace
 			local app = entry["app-name"]
+			local bundle_id = entry["app-bundle-id"]
 			local window_id = entry["window-id"]
 
-			-- Only process each window ID once
-			if not processed_windows[window_id] then
+			if app_images[bundle_id] then
+				if open_images[workspace_index] == nil then
+					open_images[workspace_index] = {}
+				end
+				open_images[workspace_index][bundle_id] = true
+			elseif not processed_windows[window_id] then
+				-- Only process each window ID once
 				processed_windows[window_id] = true
 
 				if open_windows[workspace_index] == nil then
@@ -53,6 +69,7 @@ local function withWindows(f)
 			sbar.exec(query_visible_workspaces, function(visible_workspaces)
 				local args = {
 					open_windows = open_windows,
+					open_images = open_images,
 					focused_workspaces = focused_workspaces,
 					visible_workspaces = visible_workspaces,
 				}
@@ -80,6 +97,22 @@ local function updateWindow(workspace_index, args)
 		local icon = ((lookup == nil) and app_icons["Default"] or lookup)
 		icon_line = icon_line .. " " .. icon
 	end
+
+	local open_images = args.open_images[workspace_index] or {}
+	local has_image = next(open_images) ~= nil
+	if has_image then
+		no_app = false
+	end
+	for bundle_id, image in pairs(workspace_images[workspace_index]) do
+		image:set({ drawing = open_images[bundle_id] == true })
+	end
+	-- Pull the image items up against the glyphs, or the index if there are none
+	workspaces[workspace_index]:set({
+		label = {
+			drawing = not (has_image and icon_line == ""),
+			padding_right = has_image and 0 or 12,
+		},
+	})
 
 	sbar.animate("tanh", 10, function()
 		for i, visible_workspace in ipairs(visible_workspaces) do
@@ -135,6 +168,9 @@ local function updateWorkspaceMonitor()
 			workspaces[workspace_index]:set({
 				display = workspace_monitor[workspace_index],
 			})
+			for _, image in pairs(workspace_images[workspace_index]) do
+				image:set({ display = workspace_monitor[workspace_index] })
+			end
 		end
 	end)
 end
@@ -145,8 +181,7 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 
 		local workspace = sbar.add("item", {
 			background = {
-				color = colors.bg1,
-				drawing = true,
+				drawing = false, -- Drawn by the bracket below
 			},
 			click_script = "aerospace workspace " .. workspace_index,
 			drawing = false, -- Hide all items at first
@@ -172,6 +207,37 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 
 		workspaces[workspace_index] = workspace
 
+		workspace_images[workspace_index] = {}
+		local members = { workspace.name }
+		for bundle_id, name in pairs(app_images) do
+			local image = sbar.add("item", {
+				background = {
+					color = colors.transparent,
+					border_width = 0,
+					drawing = true,
+					image = {
+						string = image_path(name, false),
+						scale = 0.27,
+						border_width = 0,
+						corner_radius = 0,
+					},
+				},
+				click_script = "aerospace workspace " .. workspace_index,
+				drawing = false,
+				icon = { drawing = false },
+				label = { drawing = false },
+				padding_left = 0,
+				padding_right = 5,
+			})
+			workspace_images[workspace_index][bundle_id] = image
+			table.insert(members, image.name)
+		end
+
+		-- Draw the pill behind the workspace and its image items together
+		sbar.add("bracket", members, {
+			background = { color = colors.bg1 },
+		})
+
 		workspace:subscribe("aerospace_workspace_change", function(env)
 			local focused_workspace = env.FOCUSED_WORKSPACE
 			local is_focused = focused_workspace == workspace_index
@@ -183,6 +249,9 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 					blur_radius = 30,
 				})
 			end)
+			for bundle_id, image in pairs(workspace_images[workspace_index]) do
+				image:set({ background = { image = { string = image_path(app_images[bundle_id], is_focused) } } })
+			end
 		end)
 	end
 
@@ -211,5 +280,8 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 			icon = { highlight = true },
 			label = { highlight = true },
 		})
+		for bundle_id, image in pairs(workspace_images[focused_workspace]) do
+			image:set({ background = { image = { string = image_path(app_images[bundle_id], true) } } })
+		end
 	end)
 end)
