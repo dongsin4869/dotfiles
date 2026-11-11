@@ -127,7 +127,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-p = 'workspace 7'
     alt-w = 'workspace 8'
     alt-z = 'workspace 9'
-    alt-e = 'workspace 10'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-t = 'move-node-to-workspace 1'
@@ -139,7 +138,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-p = 'move-node-to-workspace 7'
     alt-shift-w = 'move-node-to-workspace 8'
     alt-shift-z = 'move-node-to-workspace 9'
-    alt-shift-e = 'move-node-to-workspace 10'
 
     alt-shift-f = 'fullscreen'
 
@@ -201,7 +199,7 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
-    run = "move-node-to-workspace 10"
+    run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
     if.app-id = 'com.spotify.client'
